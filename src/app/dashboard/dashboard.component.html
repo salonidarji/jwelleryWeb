@@ -1,24 +1,25 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile >
-      <mat-card class="dashboard-card">
+ <table>
+   <tr>
+     <td *ngFor="let item of arr_jwellery" height="30%" width="30%">
+      <mat-card height="10%" width="30%">
         <mat-card-header>
-          <mat-card-title>
-            title
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
+          <mat-card-title>{{item.jwellery_name}}</mat-card-title>
+          <mat-card-subtitle>Rs. {{item.jwellery_price}} </mat-card-subtitle>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+        <img mat-card-image src="{{item.jwellery_image}}" alt="Image Not Available"  height="10%" width="30%">
+        <mat-card-content>
+
         </mat-card-content>
+        <mat-card-actions>
+          <button mat-icon-button color="warn">
+            <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+          </button>
+          <button mat-raised-button color="accent">Add To Cart</button>
+          <button mat-raised-button color="primary">More</button>
+        </mat-card-actions>
       </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+     </td>
+   </tr>
+ </table>
 </div>

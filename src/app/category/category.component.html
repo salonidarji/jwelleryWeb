@@ -1,0 +1,52 @@
+
+<mat-tab-group animationDuration="2000ms" color="accent">
+  <mat-tab label="Bracelet" (click)="onClick(1)">
+    {{catId}}
+      <div class="grid-container">
+        <mat-grid-list cols="3" rowHeight="570px">
+            <mat-grid-tile *ngFor="let item of arr_category" >
+
+              <mat-grid-tile-header color="accent">
+                {{item.jwellery_name}}<br>
+                Rs. {{item.jwellery_price}}
+              </mat-grid-tile-header>
+              <img mat-grid-tile-image src="{{item.jwellery_image}}" alt="Image Not Available"  height="100%" width="100%">
+              <mat-grid-tile-footer>
+                <button mat-icon-button color="warn">
+                  <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+                </button>
+                <button mat-raised-button color="accent">Add To Cart</button>
+                <button mat-raised-button color="primary">More</button>
+              </mat-grid-tile-footer>
+
+            </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+
+  </mat-tab>
+  <mat-tab label="Ring" (click)="onClick(2)">
+    {{catId}}
+      <div class="grid-container">
+          <mat-grid-list cols="3" rowHeight="570px">
+              <mat-grid-tile *ngFor="let item of arr_category" >
+
+                <mat-grid-tile-header color="accent">
+                  {{item.jwellery_name}}<br>
+                  Rs. {{item.jwellery_price}}
+                </mat-grid-tile-header>
+                <img mat-grid-tile-image src="{{item.jwellery_image}}" alt="Image Not Available"  height="100%" width="100%">
+                <mat-grid-tile-footer>
+                  <button mat-icon-button color="warn">
+                    <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+                  </button>
+                  <button mat-raised-button color="accent">Add To Cart</button>
+                  <button mat-raised-button color="primary">More</button>
+                </mat-grid-tile-footer>
+
+              </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+
+  </mat-tab>
+  <mat-tab label="Necklace"> Content 3 </mat-tab>
+</mat-tab-group>

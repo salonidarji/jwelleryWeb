@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
         alert('alert: ' + err);
       },
       function() {
-        alert('success');
+        console.log('All Jwellery Success');
       }
     );
 

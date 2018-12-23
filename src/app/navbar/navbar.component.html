@@ -3,11 +3,10 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
-      <button mat-button color="accent"><h2>Menu</h2></button>
+      <button mat-button color="accent"><h3>Filter</h3></button>
     <mat-nav-list color="primary">
-      <a mat-list-item href="#" >Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item routerLink="" >All</a>
+      <a mat-list-item routerLink="/Category">Category</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -18,9 +17,9 @@
         mat-icon-button
         (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        <mat-icon aria-label="Side nav toggle icon">Filter</mat-icon>
       </button>
-      <span>jwellaryWeb</span>
+      <span color="accent">jwellaryWeb</span>
     </mat-toolbar>
     <!-- Add Content Here -->
       <ng-component> </ng-component>

@@ -13,4 +13,8 @@ export class CategoryService {
   getJwelleryByCategory(id) {
     return this._http.get(this.url_category + id);
   }
+
+  getAllCategory() {
+    return this._http.get(this.url_category);
+  }
 }

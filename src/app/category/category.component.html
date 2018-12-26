@@ -1,16 +1,16 @@
 
-<mat-tab-group animationDuration="2000ms" color="accent">
-  <mat-tab label="Bracelet" (click)="onClick(1)">
-    {{catId}}
+<mat-tab-group animationDuration="400ms" color="accent" (selectedIndexChange)="onClick($event)">
+  <mat-tab *ngFor="let itemCat of cat_arr"  label="{{itemCat.category_name}}" >
+
       <div class="grid-container">
-        <mat-grid-list cols="3" rowHeight="570px">
+        <mat-grid-list cols="4" rowHeight="300px">
             <mat-grid-tile *ngFor="let item of arr_category" >
 
               <mat-grid-tile-header color="accent">
                 {{item.jwellery_name}}<br>
                 Rs. {{item.jwellery_price}}
               </mat-grid-tile-header>
-              <img mat-grid-tile-image src="{{item.jwellery_image}}" alt="Image Not Available"  height="100%" width="100%">
+              <img mat-grid-tile-image src="{{item.jwellery_image}}" alt="Image Not Available"  height="300px" width="300px">
               <mat-grid-tile-footer>
                 <button mat-icon-button color="warn">
                   <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
@@ -22,8 +22,9 @@
             </mat-grid-tile>
         </mat-grid-list>
       </div>
-
-  </mat-tab>
+    </mat-tab>
+    </mat-tab-group>
+  <!--
   <mat-tab label="Ring" (click)="onClick(2)">
     {{catId}}
       <div class="grid-container">
@@ -48,5 +49,5 @@
         </div>
 
   </mat-tab>
-  <mat-tab label="Necklace"> Content 3 </mat-tab>
-</mat-tab-group>
+  <mat-tab label="Necklace"> Content 3 </mat-tab> -->
+

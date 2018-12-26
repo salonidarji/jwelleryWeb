@@ -1,12 +1,12 @@
 <div class="grid-container">
-  <mat-grid-list cols="3" rowHeight="570px">
+  <mat-grid-list cols="4" rowHeight="300px">
      <mat-grid-tile *ngFor="let item of arr_jwellery" >
 
         <mat-grid-tile-header color="accent">
           {{item.jwellery_name}}<br>
          Rs. {{item.jwellery_price}}
         </mat-grid-tile-header>
-        <img mat-grid-tile-image src="{{item.jwellery_image}}" alt="Image Not Available"  height="100%" width="100%">
+        <img mat-grid-tile-image src="{{item.jwellery_image}}" alt="Image Not Available"  height="300px" width="300px">
         <mat-grid-tile-footer>
           <button mat-icon-button color="warn">
             <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>

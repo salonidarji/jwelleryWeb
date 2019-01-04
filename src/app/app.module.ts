@@ -3,6 +3,7 @@ import { NgModule  } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -16,6 +17,9 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatMenuModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatDialogModule} from '@angular/material/dialog';
+import { LoginComponent } from './login/login.component';
+import {MatInputModule} from '@angular/material/input';
 
 
 
@@ -24,11 +28,14 @@ import { MatTabsModule } from '@angular/material/tabs';
     AppComponent,
     NavbarComponent,
     DashboardComponent,
-    CategoryComponent
+    CategoryComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -40,7 +47,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatListModule,
     MatGridListModule,
     MatMenuModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,45 @@
+<br>
+<form class="example-form" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>User Login</mat-card-title>
+    <mat-card-subtitle>Click here to SignUp</mat-card-subtitle>
+  </mat-card-header>
+  <br><br>
+  <div align="center">
+  <mat-card-content>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" formControlName="emailFormControl"
+               [errorStateMatcher]="matcher">
+        <mat-hint>Ex. abc@gmail.com</mat-hint>
+        <mat-error *ngIf="loginForm.get('emailFormControl').hasError('email') && !loginForm.get('emailFormControl').hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('emailFormControl').hasError('required') && loginForm.get('emailFormControl').touched">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <br><br>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" formControlName="passwordControl"
+               [errorStateMatcher]="matcher">
+        <mat-hint>Alphanumeric Password</mat-hint>
+
+        <mat-error *ngIf="loginForm.get('passwordControl').hasError('required') && loginForm.get('passwordControl').touched">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+  </mat-card-content>
+  <br><br>
+  <mat-card-actions>
+    <button mat-button type="submit" [disabled]="loginForm.invalid">Submit</button>
+    <button mat-button (click)="onReset()" color="accent">Reset</button>
+  </mat-card-actions>
+  </div>
+</mat-card>
+</form>
+
